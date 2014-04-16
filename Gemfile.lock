@@ -120,6 +120,8 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    simple_enum (1.6.8)
+      activesupport (>= 3.0.0)
     slim (2.0.2)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -170,6 +172,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.0)
   sdoc
+  simple_enum
   slim
   turbolinks
   uglifier (>= 1.3.0)

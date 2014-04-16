@@ -11,6 +11,8 @@ require 'sprockets/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+require 'simple_enum/mongoid'
+
 module Lineman
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
