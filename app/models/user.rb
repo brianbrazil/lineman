@@ -1,11 +1,14 @@
 class User
   include Mongoid::Document
+  include SimpleEnum::Mongoid
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   field :name, type: String
+
+  as_enum :role, [ :attendee, :official, :admin ], strings: true
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -41,6 +44,14 @@ class User
       name
     else
       email
+    end
+  end
+
+  def role
+    if role.present?
+      role
+    else
+      :attendee
     end
   end
 
