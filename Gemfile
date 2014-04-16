@@ -4,7 +4,7 @@ ruby '2.1.1'
 
 gem 'rails', '4.0.3'
 
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid', '~> 4.0.0.beta'
 gem 'bson_ext'
 
 gem 'devise'
