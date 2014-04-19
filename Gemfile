@@ -10,6 +10,7 @@ gem 'bson_ext'
 
 gem 'devise'
 
+gem 'bootstrap-sass', '~> 3.1.1'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
