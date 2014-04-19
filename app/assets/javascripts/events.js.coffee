@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+
+  $('.datepicker').datepicker
+    dateFormat: 'DD, d MM, yy'
+    onClose: (selectedDate) ->
+      $('#event_endDate').datepicker('option', 'minDate', selectedDate)
+      $('#event_startDate').datepicker('option', 'maxDate', selectedDate)
