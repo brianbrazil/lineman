@@ -23,7 +23,14 @@
     <%= f.label :enddate %><br>
     <%= f.text_field :enddate, class: "datepicker" %>
   </div>
+  <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
   </div>
+  <br/>
+  <div class="actions">
+    <%= button_to "Delete Event", event_path(@event), class: "btn btn-danger" %>
+  </div>
+  <br/>
+
 <% end %>

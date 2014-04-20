@@ -1,0 +1,16 @@
+= button_to 'New Event', new_event_path, class: 'btn' if user_signed_in? && current_user.admin?
+br
+.jumbotron
+  table.table
+    thead
+      tr
+        th Name
+        th Start Date
+        th End Date
+    tbody
+      - @events.each do |event|
+        tr
+          td= link_to event.name, event_path(event)
+          td= event.startdate
+          td= event.enddate
+          td= link_to 'Edit', edit_event_path(event) if user_signed_in? && current_user.admin?
