@@ -6,9 +6,9 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  field :name, type: String
+  field :name, type: String, default: -> { email }
 
-  as_enum :role, [ :attendee, :official, :admin ], strings: true
+  as_enum :role, [ :attendee, :official, :admin ], strings: true, field: { type: String, default: :attendee}
 
   ## Database authenticatable
   field :email,              type: String, default: ""
@@ -38,21 +38,5 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
-
-  def name
-    if name.present?
-      name
-    else
-      email
-    end
-  end
-
-  def role
-    if role.present?
-      role
-    else
-      :attendee
-    end
-  end
 
 end
