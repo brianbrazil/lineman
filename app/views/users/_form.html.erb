@@ -11,7 +11,17 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role %><br>
+    <%= f.select :role, User.roles_for_select %>
+  </div>
+
+  <div class="actions btn">
     <%= f.submit %>
   </div>
 <% end %>
