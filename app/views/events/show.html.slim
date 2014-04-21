@@ -2,7 +2,7 @@ p#notice= notice
 h1
   = @event.name
   | &nbsp;
-  = link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary' if user_signed_in? && current_user.admin?
+  = link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary' if can? :update, @event
 p #{@event.startdate.to_s(:long)} - #{@event.enddate.to_s(:long)}
 
 table.table.table-hover

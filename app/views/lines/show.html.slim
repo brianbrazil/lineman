@@ -1,0 +1,11 @@
+p#notice= notice
+p
+  strong Name:
+  = @line.name
+p
+  strong Length:
+  = @line.length
+
+= link_to 'Edit', edit_line_path(@line) if can? :update, Line
+  | \
+  | \#{link_to 'Back', lines_path}

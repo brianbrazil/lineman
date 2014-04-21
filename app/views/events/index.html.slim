@@ -1,4 +1,4 @@
-= button_to 'New Event', new_event_path, class: 'btn' if user_signed_in? && current_user.admin?
+= button_to 'New Event', new_event_path, class: 'btn btn-default' if can? :create, Event
 br
 .jumbotron
   table.table
@@ -13,4 +13,3 @@ br
           td= link_to event.name, event_path(event)
           td= event.startdate
           td= event.enddate
-          td= link_to 'Edit', edit_event_path(event) if user_signed_in? && current_user.admin?

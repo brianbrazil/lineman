@@ -1,0 +1,19 @@
+h1 Listing lines
+table.table
+  thead
+    tr
+      th Name
+      th Length
+      th
+      th
+      th
+  tbody
+    - @lines.each do |line|
+      tr
+        td= line.name
+        td= line.length
+        td= link_to 'Show', line
+        td= link_to 'Edit', edit_line_path(line) if can? :update, Line
+        td= link_to 'Destroy', line, method: :delete, confirm: 'Are you sure?' if can? :destroy, Line
+br
+  = link_to 'New Line', new_line_path if can? :create, Line

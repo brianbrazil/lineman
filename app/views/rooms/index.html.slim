@@ -1,0 +1,19 @@
+h1 Listing rooms
+table.table
+  thead
+    tr
+      th Name
+      th Capacity
+      th
+      th
+      th
+  tbody
+    - @rooms.each do |room|
+      tr
+        td= room.name
+        td= room.capacity
+        td= link_to 'Show', room
+        td= link_to 'Edit', edit_room_path(room) if can? :update, Room
+        td= link_to 'Destroy', room, method: :delete, confirm: 'Are you sure?' if can? :destroy, Room
+br
+  = link_to 'New Room', new_room_path if can? :create, Room

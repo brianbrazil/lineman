@@ -1,0 +1,10 @@
+p#notice= notice
+p
+  strong Name:
+  = @room.name
+p
+  strong Capacity:
+  = @room.capacity
+= link_to 'Edit', edit_room_path(@room) if can? :update, Room
+  | \
+  | \#{link_to 'Back', rooms_path}
