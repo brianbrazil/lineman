@@ -9,6 +9,7 @@ gem 'simple_enum'
 gem 'bson_ext'
 
 gem 'devise'
+gem 'cancan'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'sass-rails', '~> 4.0.0'
