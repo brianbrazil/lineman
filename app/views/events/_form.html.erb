@@ -11,26 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :startdate %><br>
-    <%= f.text_field :startdate, class: "datepicker" %>
+    <%= f.text_field :startdate, class: "datepicker form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :enddate %><br>
-    <%= f.text_field :enddate, class: "datepicker" %>
+    <%= f.text_field :enddate, class: "datepicker form-control" %>
   </div>
   <br/>
-  <div class="actions">
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  <div class="form-group">
+    <%= f.submit 'Submit', class: 'btn btn-primary form-control' %>
   </div>
   <br/>
-  <div class="actions">
-    <%= button_to "Delete Event", event_path(@event), class: "btn btn-danger" %>
-  </div>
-  <br/>
-
+  <% if !@event.new_record? %>
+    <div class="actions">
+      <%= button_to "Delete Event", event_path(@event.id), class: "btn btn-danger form-control" %>
+    </div>
+    <br/>
+  <% end %>
 <% end %>

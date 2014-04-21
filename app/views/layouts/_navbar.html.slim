@@ -9,6 +9,8 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
       a.navbar-brand href="/"  Lineman
     .collapse.navbar-collapse
       ul.nav.navbar-nav
+        - if @event.present?
+          li= link_to @event.name, event_path(@event.id)
       ul.nav.navbar-nav.navbar-right
         li
           - if user_signed_in?

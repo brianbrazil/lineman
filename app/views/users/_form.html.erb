@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :role %><br>
-    <%= f.select :role, User.roles_for_select %>
+    <%= f.select :role, User.roles_for_select, {}, { class: 'form-control' } %>
   </div>
 
-  <div class="actions btn">
-    <%= f.submit %>
+  <div>
+    <%= f.submit 'Submit', class: 'btn btn-default' %>
   </div>
 <% end %>
