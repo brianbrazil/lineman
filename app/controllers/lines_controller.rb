@@ -49,7 +49,11 @@ class LinesController < ApplicationController
 
   private
 
-    def line_params
-      params.require(:line).permit(:name, :length)
-    end
+  def set_line
+    @line = Line.find(params[:id])
+  end
+
+  def line_params
+    params.require(:line).permit(:name, :length)
+  end
 end
