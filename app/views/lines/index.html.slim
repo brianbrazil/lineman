@@ -4,6 +4,7 @@ table.table
     tr
       th Name
       th Length
+      th Room
       th
       th
       th
@@ -12,8 +13,9 @@ table.table
       tr
         td= line.name
         td= line.length
+        td= line.room.name
         td= link_to 'Show', line
         td= link_to 'Edit', edit_line_path(line) if can? :update, Line
         td= link_to 'Destroy', line, method: :delete, confirm: 'Are you sure?' if can? :destroy, Line
-br
+  br
   = link_to 'New Line', new_line_path if can? :create, Line

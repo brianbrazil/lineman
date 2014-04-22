@@ -1,0 +1,20 @@
+= form_for(@line) do |f|
+  - if @line.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@line.errors.count, "error")
+        | prohibited this line from being saved:
+      ul
+        - @line.errors.full_messages.each do |msg|
+          li= msg
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :length
+    = f.number_field :length, class: 'form-control'
+  .form-group
+    = f.label :room
+    = f.select :room, @rooms.map { |room| [room.name,room.id] }, {}, { class: 'form-control' }
+  .form-group
+    = f.submit 'Submit', class: 'btn btn-default'

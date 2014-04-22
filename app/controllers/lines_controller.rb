@@ -11,9 +11,11 @@ class LinesController < ApplicationController
 
   def new
     @line = Line.new
+    @rooms = Room.all
   end
 
   def edit
+    @rooms = Room.all
   end
 
   def create
@@ -57,6 +59,6 @@ class LinesController < ApplicationController
   end
 
   def line_params
-    params.require(:line).permit(:name, :length)
+    params.require(:line).permit(:name, :length, :room)
   end
 end
