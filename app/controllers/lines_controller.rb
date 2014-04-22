@@ -10,6 +10,7 @@ class LinesController < ApplicationController
   end
 
   def new
+    @line = Line.new
   end
 
   def edit
