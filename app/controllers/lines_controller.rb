@@ -17,6 +17,8 @@ class LinesController < ApplicationController
   end
 
   def create
+    @line = Line.new(line_params)
+
     respond_to do |format|
       if @line.save
         format.html { redirect_to @line, notice: 'Line was successfully created.' }
