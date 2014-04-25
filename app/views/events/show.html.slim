@@ -11,6 +11,8 @@ p#notice= notice
   .col-md-6 #{@event.startdate.to_s(:long)} - #{@event.enddate.to_s(:long)}
   .col-md-6.text-right= link_to shortcode_url(@event.shortcode), shortcode_url(@event.shortcode)
 br
+p
+  = link_with_icon 'glyphicon-plus', '', new_line_path, class: 'btn btn-default btn-sm text-right'
 table.table.table-hover
   tbody
     tr
