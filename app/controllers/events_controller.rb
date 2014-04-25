@@ -50,6 +50,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def shortcode
+    event = Event.find_by(shortcode: params[:shortcode])
+    redirect_to event_url event
+  end
+
   private
 
   def set_event
@@ -57,7 +62,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :startdate, :enddate)
+    params.require(:event).permit(:name, :startdate, :enddate, :shortcode)
   end
 
 end

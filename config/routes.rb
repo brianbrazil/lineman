@@ -8,4 +8,6 @@ Lineman::Application.routes.draw do
   resources :rooms
   resources :lines
 
+  get '/e/:shortcode', to: 'events#shortcode', as: 'shortcode'
+
 end

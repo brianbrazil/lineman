@@ -23,12 +23,16 @@
     <%= f.label :enddate %><br>
     <%= f.text_field :enddate, class: "datepicker form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :shortcode %><br>
+    <%= f.text_field :shortcode, class: 'form-control' %>
+  </div>
   <br/>
   <div class="form-group">
     <%= f.submit 'Submit', class: 'btn btn-primary form-control' %>
   </div>
   <br/>
-  <% if !@event.new_record? %>
+  <% unless @event.new_record? %>
     <div class="actions">
       <%= button_to "Delete Event", event_path(@event.id), class: "btn btn-danger form-control" %>
     </div>

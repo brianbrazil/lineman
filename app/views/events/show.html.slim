@@ -1,10 +1,13 @@
 p#notice= notice
-h1
-  = @event.name
-  | &nbsp;
-  = link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary' if can? :update, @event
-p #{@event.startdate.to_s(:long)} - #{@event.enddate.to_s(:long)}
-
+.row
+  h1.col-md-10
+    = @event.name
+    | &nbsp;
+    = link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary' if can? :update, @event
+.row
+  .col-md-6 #{@event.startdate.to_s(:long)} - #{@event.enddate.to_s(:long)}
+  .col-md-6.text-right #{shortcode_url @event.shortcode}
+br
 table.table.table-hover
   tbody
     tr

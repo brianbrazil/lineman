@@ -4,5 +4,6 @@ class Event
   field :name, type: String
   field :startdate, type: Date
   field :enddate, type: Date
+  field :shortcode, type: String
 
 end
