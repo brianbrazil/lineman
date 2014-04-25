@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = @event.decorate
   end
 
   def new
