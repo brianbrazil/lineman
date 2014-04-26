@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
+    @event = Event.find params[:event]
   end
 
   def edit
@@ -58,7 +59,7 @@ class RoomsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def room_params
-    params.require(:room).permit(:name, :capacity)
+    params.require(:room).permit(:name, :capacity, :event)
   end
 
 end

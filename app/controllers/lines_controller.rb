@@ -11,7 +11,8 @@ class LinesController < ApplicationController
 
   def new
     @line = Line.new
-    @rooms = Room.all
+    @event = Event.find params[:event]
+    @rooms = @event.rooms
   end
 
   def edit

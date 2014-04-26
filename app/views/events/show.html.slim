@@ -11,16 +11,22 @@ p#notice= notice
   .col-md-6 #{@event.startdate.to_s(:long)} - #{@event.enddate.to_s(:long)}
   .col-md-6.text-right= link_to shortcode_url(@event.shortcode), shortcode_url(@event.shortcode)
 br
-p
-  = link_with_icon 'glyphicon-plus', '', new_line_path, class: 'btn btn-default btn-sm text-right'
-table.table.table-hover
-  tbody
-    tr
-      td LineName
-      td PercentFull
-    tr
-      td LineName
-      td PercentFull
-    tr
-      td LineName
-      td PercentFull
+.row
+  .col-md-6.text-center
+    p= link_with_icon 'glyphicon-plus', 'Add Room', new_room_path(event: @event), class: 'btn btn-default btn-sm'
+  .col-md-6.text-center
+    p= link_with_icon 'glyphicon-plus', 'Add Line', new_line_path(event: @event), class: 'btn btn-default btn-sm'
+.row
+  .col-md-6
+    table.table.table-hover
+      tbody
+        - @event.rooms.each do |room|
+          tr
+            td= room.name
+  .col-md-6
+    table.table.table-hover
+      tbody
+        - @event.lines.each do |line|
+          tr
+            td= line.name
+            td= (line.length / line.room.capacity) * 100
