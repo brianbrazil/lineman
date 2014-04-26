@@ -13,9 +13,15 @@ p#notice= notice
 br
 .row
   .col-md-6.text-center
-    p= link_with_icon 'glyphicon-plus', 'Add Room', new_room_path(event: @event), class: 'btn btn-default btn-sm'
+    h3 Rooms
+    p
+      - if can? :create, :line
+        = link_with_icon 'glyphicon-plus', 'Add Room', new_room_path(event: @event), class: 'btn btn-default btn-sm'
   .col-md-6.text-center
-    p= link_with_icon 'glyphicon-plus', 'Add Line', new_line_path(event: @event), class: 'btn btn-default btn-sm'
+    h3 Lines
+    p
+      - if can? :create, :line
+        = link_with_icon 'glyphicon-plus', 'Add Line', new_line_path(event: @event), class: 'btn btn-default btn-sm'
 .row
   .col-md-6
     table.table.table-hover
