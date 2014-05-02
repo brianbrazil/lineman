@@ -13,3 +13,7 @@
  *= require bootstrap
  *= require_tree .
  */
+
+.main {
+    margin-top: 60px;
+}

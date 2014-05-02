@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Lineman
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    == render '/layouts/navbar'
+    .container.main
+      - flash.each do |level, msg|
+        div[class="#{flash_class(level)}"] = msg
+      = yield
