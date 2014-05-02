@@ -11,9 +11,6 @@
     = f.label :name
     = f.text_field :name, class: 'form-control'
   .form-group
-    = f.label :length
-    = f.number_field :length, class: 'form-control'
-  .form-group
     = f.label :room
     = f.select :room, @rooms.map { |room| [room.name,room.id] }, {}, { class: 'form-control' }
   .form-group

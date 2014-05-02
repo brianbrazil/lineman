@@ -4,6 +4,6 @@ class Line
   belongs_to :room
 
   field :name, type: String
-  field :length, type: Integer
+  field :length, type: Integer, default: 0
 
 end
