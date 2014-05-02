@@ -10,13 +10,13 @@ class Ability
 
     if user.official?
       can :read, Event
-      can :read, Line
-      can :update, Line
+      can :read, Session
+      can :update, Session
     end
 
     if user.attendee?
       can :read, Event
-      can :read, Line
+      can :read, Session
     end
 
   end

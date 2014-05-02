@@ -1,7 +1,7 @@
 class Room
   include Mongoid::Document
 
-  has_many :lines
+  has_many :sessions
   belongs_to :event
 
   field :name, type: String

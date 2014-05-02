@@ -8,8 +8,8 @@ class Event
   field :enddate, type: Date
   field :shortcode, type: String
 
-  def lines
-    self.rooms.map { |room| room.lines }.flatten
+  def sessions
+    self.rooms.map { |room| room.sessions }.flatten
   end
 
 end

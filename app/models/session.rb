@@ -1,4 +1,4 @@
-class Line
+class Session
   include Mongoid::Document
 
   belongs_to :room

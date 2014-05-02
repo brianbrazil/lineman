@@ -2,13 +2,13 @@ require 'test_helper'
 
 class LinesControllerTest < ActionController::TestCase
   setup do
-    @line = lines(:one)
+    @session = lines(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:lines)
+    assert_not_nil assigns(:sessions)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class LinesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create line" do
-    assert_difference('Line.count') do
-      post :create, line: { length: @line.length, name: @line.name }
+  test "should create session" do
+    assert_difference('Session.count') do
+      post :create, session: { length: @session.length, name: @session.name }
     end
 
-    assert_redirected_to line_path(assigns(:line))
+    assert_redirected_to session_path(assigns(:session))
   end
 
-  test "should show line" do
-    get :show, id: @line
+  test "should show session" do
+    get :show, id: @session
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @line
+    get :edit, id: @session
     assert_response :success
   end
 
-  test "should update line" do
-    patch :update, id: @line, line: { length: @line.length, name: @line.name }
-    assert_redirected_to line_path(assigns(:line))
+  test "should update session" do
+    patch :update, id: @session, session: { length: @session.length, name: @session.name }
+    assert_redirected_to session_path(assigns(:session))
   end
 
-  test "should destroy line" do
-    assert_difference('Line.count', -1) do
-      delete :destroy, id: @line
+  test "should destroy session" do
+    assert_difference('Session.count', -1) do
+      delete :destroy, id: @session
     end
 
     assert_redirected_to lines_path

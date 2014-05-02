@@ -15,13 +15,13 @@ br
   .col-md-6.text-center
     h3 Rooms
     p
-      - if can? :create, :line
+      - if can? :create, :session
         = link_with_icon 'glyphicon-plus', 'Add Room', new_room_path(event: @event), class: 'btn btn-default btn-sm'
   .col-md-6.text-center
-    h3 Lines
+    h3 Sessions
     p
-      - if can? :create, :line
-        = link_with_icon 'glyphicon-plus', 'Add Line', new_line_path(event: @event), class: 'btn btn-default btn-sm'
+      - if can? :create, :session
+        = link_with_icon 'glyphicon-plus', 'Add Session', new_session_path(event: @event), class: 'btn btn-default btn-sm'
 .row
   .col-md-6
     table.table.table-hover
@@ -32,7 +32,7 @@ br
   .col-md-6
     table.table.table-hover
       tbody
-        - @event.lines.each do |line|
+        - @event.sessions.each do |line|
           tr
             td= line.name
             td= (line.line_length / line.room.capacity) * 100

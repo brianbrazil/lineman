@@ -1,11 +1,11 @@
-= form_for(@line) do |f|
-  - if @line.errors.any?
+= form_for(@session) do |f|
+  - if @session.errors.any?
     #error_explanation
       h2
-        = pluralize(@line.errors.count, "error")
+        = pluralize(@session.errors.count, "error")
         | prohibited this line from being saved:
       ul
-        - @line.errors.full_messages.each do |msg|
+        - @session.errors.full_messages.each do |msg|
           li= msg
   .form-group
     = f.label :name

@@ -1,0 +1,21 @@
+h1 Listing Sessions
+table.table
+  thead
+    tr
+      th Name
+      th Line Length
+      th Room
+      th
+      th
+      th
+  tbody
+    - @sessions.each do |line|
+      tr
+        td= line.name
+        td= line.line_length
+        td= line.room.name
+        td= link_to 'Show', line
+        td= link_to 'Edit', edit_session_path(line) if can? :update, Session
+        td= link_to 'Destroy', line, method: :delete, confirm: 'Are you sure?' if can? :destroy, Session
+  br
+  = link_to 'New Session', new_session_path if can? :create, Session

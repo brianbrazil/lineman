@@ -1,0 +1,11 @@
+p#notice= notice
+p
+  strong Name:
+  = @session.name
+p
+  strong Length:
+  = @session.line_length
+
+= link_to 'Edit', edit_session_path(@session) if can? :update, Session
+  | \
+  | \#{link_to 'Back', lines_path}
