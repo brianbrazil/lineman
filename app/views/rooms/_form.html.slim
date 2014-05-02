@@ -7,14 +7,13 @@
       ul
         - @room.errors.full_messages.each do |msg|
           li= msg
-  .field
+  .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control'
-  .field
+  .form-group
     = f.label :capacity
     = f.number_field :capacity, class: 'form-control'
-
   = f.hidden_field :event, value: @event.id
-
-  .actions
-    = f.submit
+  .form-group
+    =<> f.submit 'Submit' ,class: 'btn btn-default'
+  = link_to 'Back', event_path(@event)

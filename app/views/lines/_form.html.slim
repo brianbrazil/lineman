@@ -18,3 +18,4 @@
     = f.select :room, @rooms.map { |room| [room.name,room.id] }, {}, { class: 'form-control' }
   .form-group
     = f.submit 'Submit', class: 'btn btn-default'
+  = link_to 'Back', event_path(@event)
