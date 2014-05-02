@@ -17,3 +17,5 @@
 
 /.idea
 /lineman.iws
+
+/.env
