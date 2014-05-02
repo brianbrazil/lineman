@@ -4,7 +4,7 @@ p
   = @line.name
 p
   strong Length:
-  = @line.length
+  = @line.line_length
 
 = link_to 'Edit', edit_line_path(@line) if can? :update, Line
   | \

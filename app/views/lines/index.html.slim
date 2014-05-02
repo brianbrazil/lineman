@@ -3,7 +3,7 @@ table.table
   thead
     tr
       th Name
-      th Length
+      th Line Length
       th Room
       th
       th
@@ -12,7 +12,7 @@ table.table
     - @lines.each do |line|
       tr
         td= line.name
-        td= line.length
+        td= line.line_length
         td= line.room.name
         td= link_to 'Show', line
         td= link_to 'Edit', edit_line_path(line) if can? :update, Line

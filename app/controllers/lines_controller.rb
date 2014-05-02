@@ -24,7 +24,7 @@ class LinesController < ApplicationController
 
     respond_to do |format|
       if @line.save
-        format.html { redirect_to @line, notice: 'Line was successfully created.' }
+        format.html { redirect_to event_path(@line.room.event), notice: 'Line was successfully created.' }
         format.json { render action: 'show', status: :created, location: @line }
       else
         format.html { render action: 'new' }
@@ -60,6 +60,6 @@ class LinesController < ApplicationController
   end
 
   def line_params
-    params.require(:line).permit(:name, :length, :room)
+    params.require(:line).permit(:name, :line_length, :room)
   end
 end
